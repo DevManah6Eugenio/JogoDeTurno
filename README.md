@@ -20,12 +20,12 @@ Vilão
 Exemplo de turnos
 Heroi - Ataca - 10 com Super Espada
 Vilão - Ataca - 20 com Lavar Acida
---------------------------------------
+****************************************
 Heroi - Vida:80 - Kits 2
 Vilão - Vida:180
-======================================
+****************************************
 Heroi - Usa Kit - +10 Vida
 Vilão - Ataca - 50 com Lavar Acida
---------------------------------------
+****************************************
 Heroi - Vida:40 - Kits 1
 Vilão - Vida:180
