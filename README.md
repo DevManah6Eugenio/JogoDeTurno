@@ -2,6 +2,8 @@
 
 Exercicio 
 
+<br>
+
 Crie um jogode turnos onde deve existir um heroi e um vilão
 
 O Heroi vai ter ataue e kit de cura, o vilão vai ter ataque variados por cada turno, quem tiver a vida zerada primeiro perde
@@ -19,6 +21,7 @@ Vilão
 -Ataque(int) => random 1-100
 -Nome Ataque(String)
 
+<br>
 
 Exemplo de turnos
 
