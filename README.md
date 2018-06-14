@@ -1,6 +1,6 @@
 # JogoDeTurno
 
-Exercicio 
+<h2>Exercicio</h2> 
 
 <br>
 
