@@ -8,16 +8,17 @@ public class Personagem {
     private String nomeAtaque;
 
     //construtor implicito
-    public Personagem(){}
-    
+    public Personagem() {
+    }
+
     //construtor explicito
     public Personagem(String nome, int ataque, String nomeAtaque) {
         this.nome = nome;
         this.ataque = ataque;
         this.nomeAtaque = nomeAtaque;
     }
-    
-    //todos os demais Gets e Sets
+
+    //todos os demais Gets e Sets dos atributos
     public void setNome(String nome) {
         this.nome = nome;
     }

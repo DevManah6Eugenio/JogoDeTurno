@@ -6,10 +6,11 @@ public class Vilao extends Personagem {
 
     //objeto do tipo Random para poder gerar valores aleatorios
     private Random gerador = null;
-    
+
     //construtor implicito
-    public Vilao(){}
-    
+    public Vilao() {
+    }
+
     //construtor explicito
     public Vilao(String nome, int ataque, String nomeAtaque) {
         super(nome, ataque, nomeAtaque);
@@ -19,7 +20,7 @@ public class Vilao extends Personagem {
     @Override
     public int getAtaque() {
         gerador = new Random();
-        super.setAtaque(gerador.nextInt(100)+1);
+        super.setAtaque(gerador.nextInt(100) + 1);
         gerador = null;
         return super.getAtaque();
     }
