@@ -13,7 +13,7 @@ Heroi
 <br>
 
 -Nome(String)<br>
--Ataque()<br>
+-Ataque(int)<br>
 -Nome Ataque(String)<br>
 -Quantidade Kits de Cura(int)<br>
 
