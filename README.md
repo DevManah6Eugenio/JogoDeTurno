@@ -10,20 +10,26 @@ O Heroi vai ter ataue e kit de cura, o vilão vai ter ataque variados por cada t
 
 Heroi
 
--Nome(String)
--Ataque()
--Nome Ataque(String)
--Quantidade Kits de Cura(int)
+<br>
 
-Vilão
-
--Nome(String)
--Ataque(int) => random 1-100
--Nome Ataque(String)
+-Nome(String)<br>
+-Ataque()<br>
+-Nome Ataque(String)<br>
+-Quantidade Kits de Cura(int)<br>
 
 <br>
 
-Exemplo de turnos
+Vilão
+
+<br>
+
+-Nome(String)<br>
+-Ataque(int) => random 1-100<br>
+-Nome Ataque(String)<br>
+
+<br><br>
+
+Exemplo de turnos<br>
 
 Heroi - Ataca - 10 com Super Espada
 
