@@ -3,6 +3,7 @@ package jogodeturno.personagens;
 //essa classe é de que os demais personagens devem extender
 public class Personagem {
 
+    private int vida;
     private String nome;
     private int ataque;
     private String nomeAtaque;
@@ -16,6 +17,15 @@ public class Personagem {
         this.nome = nome;
         this.ataque = ataque;
         this.nomeAtaque = nomeAtaque;
+        this.vida = 200;
+    }
+    
+    //construtor explicito
+    public Personagem(String nome, int ataque, String nomeAtaque, int vida) {
+        this.nome = nome;
+        this.ataque = ataque;
+        this.nomeAtaque = nomeAtaque;
+        this.vida = vida;
     }
 
     //todos os demais Gets e Sets dos atributos
@@ -41,5 +51,13 @@ public class Personagem {
 
     public void setNomeAtaque(String nomeAtaque) {
         this.nomeAtaque = nomeAtaque;
+    }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
     }
 }
