@@ -36,7 +36,7 @@ public class JogoDeTurno {
                 default:
                     System.out.println("Opção Invalida");
             }
-                vilaoGanhou = partida.ataqueVilao();
+            vilaoGanhou = partida.ataqueVilao();
             System.out.println(partida.status());
         }
 
