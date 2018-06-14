@@ -20,7 +20,7 @@ public class Vilao extends Personagem {
     @Override
     public int getAtaque() {
         gerador = new Random();
-        super.setAtaque(gerador.nextInt(100) + 1);
+        super.setAtaque((gerador.nextInt(10) + 1) * 10);
         gerador = null;
         return super.getAtaque();
     }
