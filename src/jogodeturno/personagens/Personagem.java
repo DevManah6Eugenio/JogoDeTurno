@@ -1,17 +1,23 @@
 package jogodeturno.personagens;
 
+//essa classe é de que os demais personagens devem extender
 public class Personagem {
 
     private String nome;
     private int ataque;
     private String nomeAtaque;
 
+    //construtor implicito
+    public Personagem(){}
+    
+    //construtor explicito
     public Personagem(String nome, int ataque, String nomeAtaque) {
         this.nome = nome;
         this.ataque = ataque;
         this.nomeAtaque = nomeAtaque;
     }
     
+    //todos os demais Gets e Sets
     public void setNome(String nome) {
         this.nome = nome;
     }
