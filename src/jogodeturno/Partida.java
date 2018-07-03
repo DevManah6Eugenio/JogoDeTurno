@@ -54,15 +54,6 @@ public class Partida {
         status = "";
         
         status += ("******************************\n");
-        if (heroiAtacou) {
-            status += (heroi.getNome() + " - Ataca - -" + heroi.getAtaque() + " com  " + heroi.getNomeAtaque() + "\n");
-        } else {
-            status += (heroi.getNome() + " - Usa Kit - +10 Vida\n");
-        }
-        status += (vilao.getNome() + " - Ataca - -" +(this.ataqueVilao)+ " com " + vilao.getNomeAtaque() + "\n");  
-        status += ("******************************\n");
-        
-        status += ("******************************\n");
         status += (heroi.getNome() + " - Vida: " + heroi.getVida() + " - Kits: " + heroi.getQtdKitsCura() + "\n");
         status += (vilao.getNome() + " - Vida: " + vilao.getVida() + "\n");
         status += ("******************************\n");
