@@ -1,62 +1,48 @@
 package jogodeturno;
 
-import jogodeturno.personagens.Heroi;
-import jogodeturno.personagens.Vilao;
+import jogodeturno.models.Heroi;
+import jogodeturno.models.StatusAcao;
+import jogodeturno.models.Vilao;
 
+/**
+ *
+ * @author manases
+ */
 public class Partida {
 
-    private Heroi heroi = null;
-    private Vilao vilao = null;
-    private String status;
-    private int vida;
-    private int ataqueVilao;
-    private boolean heroiAtacou;
-    
+    private Heroi heroi;
+    private Vilao vilao;
+
     public Partida(Heroi heroi, Vilao vilao) {
         this.heroi = heroi;
         this.vilao = vilao;
     }
 
-    public boolean ataqueHeroi() {
-        this.vida = vilao.getVida() - heroi.getAtaque();
-        heroiAtacou = true;
-
-        if (vida > 0) {
-            vilao.setVida(this.vida);
-            return false;
-        } else {
-            return true;
-        }
+    public StatusAcao ataqueHeroi() {
+        vilao.setVida(vilao.getVida() - heroi.getAtaque());
+        return new StatusAcao(heroi.getNome() + " - Ataca - " + heroi.getAtaque() + " com " + heroi.getNomeAtaque(), (vilao.getVida() <= 0));
     }
 
-    public boolean ataqueVilao() {
-        
-        this.ataqueVilao = vilao.getAtaque();
-        this.vida = heroi.getVida() - this.ataqueVilao;
-
-        if (this.vida > 0) {
-            heroi.setVida(this.vida);
-            return false;
-        } else {
-            return true;
-        }
+    public StatusAcao ataqueVilao() {
+        heroi.setVida(heroi.getVida() - vilao.getAtaque());
+        return new StatusAcao(vilao.getNome() + " - Ataca - " + vilao.getAtaque() + " com " + vilao.getNomeAtaque(), (heroi.getVida() <= 0));
     }
 
-    public void pocaoHeroi() {
+    public StatusAcao HeroiTomarPocao() {
+        int adicionalVida = 0;
         if (heroi.getQtdKitsCura() > 0) {
+            adicionalVida = 10;
             heroi.setQtdKitsCura(heroi.getQtdKitsCura() - 1);
-            heroi.setVida(heroi.getVida() + 10);
-            heroiAtacou = false;
         }
+        heroi.setVida(heroi.getVida() + adicionalVida);
+        return new StatusAcao(heroi.getNome() + " - Usa Kit - +" + adicionalVida + " Vida", false);
     }
 
-    public String status() {
-        status = "";
-        
-        status += ("******************************\n");
-        status += (heroi.getNome() + " - Vida: " + heroi.getVida() + " - Kits: " + heroi.getQtdKitsCura() + "\n");
-        status += (vilao.getNome() + " - Vida: " + vilao.getVida() + "\n");
-        status += ("******************************\n");
+    public String Status() {
+        String status = ("******************************\n");
+                status += heroi.status() + "\n";
+                status += vilao.status() + "\n";
+                status += ("******************************\n");
         return status;
     }
 }

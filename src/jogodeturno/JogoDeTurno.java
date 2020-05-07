@@ -1,8 +1,9 @@
 package jogodeturno;
 
 import java.util.Scanner;
-import jogodeturno.personagens.Heroi;
-import jogodeturno.personagens.Vilao;
+import jogodeturno.models.Heroi;
+import jogodeturno.models.StatusAcao;
+import jogodeturno.models.Vilao;
 
 public class JogoDeTurno {
 
@@ -13,37 +14,43 @@ public class JogoDeTurno {
 
         Scanner scan = new Scanner(System.in);
 
-        Heroi heroi = new Heroi(3, "Heroi", 50, "Super Espada");
-        Vilao vilao = new Vilao("Vilão", 0, "Larva Acida");
+        Heroi heroi = new Heroi(3, "Heroi", 50, "Super Espada", 500);
+        Vilao vilao = new Vilao("Vilão", 50, "Larva Acida", 500);
 
         Partida partida = new Partida(heroi, vilao);
 
-        boolean heroiGanhou = false;
-        boolean vilaoGanhou = false;
+        StatusAcao statusAcaoHeroi = null;
+        StatusAcao statusAcaoVilao = null;
 
-        while (!(heroiGanhou) || !(vilaoGanhou)) {
+        do {
             System.out.println("Heroi\n(1) para ataque\2(2) para poção");
 
             opcao = scan.nextInt();
 
             switch (opcao) {
                 case 1:
-                    heroiGanhou = partida.ataqueHeroi();
+                    statusAcaoHeroi = partida.ataqueHeroi();
                     break;
                 case 2:
-                    partida.pocaoHeroi();
+                    statusAcaoHeroi = partida.HeroiTomarPocao();
                     break;
                 default:
                     System.out.println("Opção Invalida");
             }
-            vilaoGanhou = partida.ataqueVilao();
-            System.out.println(partida.status());
-        }
+            statusAcaoVilao = partida.ataqueVilao();
 
-        if (heroiGanhou) {
+            System.out.println(statusAcaoHeroi.getMensagem());
+            System.out.println(statusAcaoVilao.getMensagem());
+            System.out.println(partida.Status());
+
+        } while (!statusAcaoHeroi.isGanhou() || !statusAcaoVilao.isGanhou());
+
+        if (statusAcaoHeroi.isGanhou()) {
             System.out.println("\n\nO Heroi Ganhou!!!!!!!!!!!");
-        } else {
+        } else if (statusAcaoVilao.isGanhou()) {
             System.out.println("\n\nO Vilão Ganhou!!!!!!!!!!!");
         }
+
+        System.out.println("fim");
     }
 }
